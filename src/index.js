@@ -1,7 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
 import {PageLayout} from "./PageLayout";
 
+import 'react-grid-layout/css/styles.css'
+import 'simplebar/dist/simplebar.min.css';
 
 const ExamplePage = () =>{
 
@@ -10,7 +12,6 @@ const ExamplePage = () =>{
     )
 }
 
-
-const contentDiv = document.getElementById("root");
-const gridProps = window.gridProps || {};
-ReactDOM.render(React.createElement(ExamplePage, gridProps), contentDiv);
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<ExamplePage />);

@@ -1,7 +1,27 @@
+.layoutJSON {
+    background: #ddd;
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 10px;
+}
+.columns {
+    -moz-columns: 200px;
+    -webkit-columns: 200px;
+    columns: 200px;
+}
+.drag-header{
+    cursor: all-scroll;
+}
+
 .menu-left{
-    width: 250px;
+    width: 230px;
+    float: left;
+}
+.menu-left .nav-pills{
+    margin: 10px;
 }
 .content{
-    width: calc(100% - 250px);
-    pading: 10px;
+    width: calc(100% - 230px);
+    padding: 10px;
+    float: right;
 }

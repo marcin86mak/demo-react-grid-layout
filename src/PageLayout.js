@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {
-    Col,
     Collapse, DropdownItem, DropdownMenu, DropdownToggle,
     Nav,
     Navbar,
@@ -10,11 +9,26 @@ import {
     NavLink,
     UncontrolledDropdown
 } from "reactstrap";
+import {PageOne} from "./PageOne";
 
 
 export const PageLayout = () => {
     const [toggleBar, setToggleBar] = useState(false);
+    const [page, setPage] = useState('PageOne');
     const onToggleBar = () => setToggleBar(!toggleBar);
+    const onClickPage = (_page) => () => setPage(_page);
+
+
+    const Content = ({page}) => {
+        switch (page) {
+            case 'PageOne':
+                return <PageOne/>
+            case 'PageTwo':
+                return <div className='mt-5 text-center'>NONE PAGE</div>
+            default:
+                return <div className='mt-5 text-center'>ERROR PAGE</div>
+        }
+    }
 
     return (
         <div>
@@ -33,12 +47,12 @@ export const PageLayout = () => {
                         navbar
                     >
                         <NavItem>
-                            <NavLink href="/components/">
+                            <NavLink href="/">
                                 Components
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">
+                            <NavLink href="https://github.com/marcin86mak/demo-react-grid-layout">
                                 GitHub
                             </NavLink>
                         </NavItem>
@@ -67,15 +81,26 @@ export const PageLayout = () => {
                         </UncontrolledDropdown>
                     </Nav>
                     <NavbarText>
-                        Simple Text
+                        DEMO
                     </NavbarText>
                 </Collapse>
             </Navbar>
             <div className='border min-vh-100 menu-left'>
-
+                <Nav vertical pills>
+                    <NavItem active={page === 'PageOne'}>
+                        <NavLink active={page === 'PageOne'} href="#" onClick={onClickPage('PageOne')}>
+                            Dashboard
+                        </NavLink>
+                    </NavItem>
+                    <NavItem active={page === 'PageTwo'}>
+                        <NavLink active={page === 'PageTwo'} href="#" onClick={onClickPage('PageTwo')}>
+                            Another Link
+                        </NavLink>
+                    </NavItem>
+                </Nav>
             </div>
             <div className='min-vh-100 content'>
-
+                <Content page={page}/>
             </div>
         </div>
     )
