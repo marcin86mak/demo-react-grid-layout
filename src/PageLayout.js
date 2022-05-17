@@ -37,8 +37,8 @@ export const PageLayout = () => {
                 expand="md"
                 light
             >
-                <NavbarBrand href="/">
-                    demo-react-grid-layout
+                <NavbarBrand href="/" className={'ms-5 me-4'}>
+                    www.x-plugin.pl
                 </NavbarBrand>
                 <NavbarToggler onClick={onToggleBar}/>
                 <Collapse navbar>
@@ -48,7 +48,7 @@ export const PageLayout = () => {
                     >
                         <NavItem>
                             <NavLink href="/">
-                                Components
+                                demo-react-grid-layout
                             </NavLink>
                         </NavItem>
                         <NavItem>
