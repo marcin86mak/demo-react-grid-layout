@@ -48,7 +48,7 @@ export const PageLayout = () => {
                     >
                         <NavItem>
                             <NavLink href="/">
-                                demo-react-grid-layout
+                                Components
                             </NavLink>
                         </NavItem>
                         <NavItem>
@@ -81,7 +81,7 @@ export const PageLayout = () => {
                         </UncontrolledDropdown>
                     </Nav>
                     <NavbarText>
-                        DEMO
+                        DEMO - demo-react-grid-layout
                     </NavbarText>
                 </Collapse>
             </Navbar>
